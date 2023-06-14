@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkyui_docs_yui_ibc_solidity=self.webpackChunkyui_docs_yui_ibc_solidity||[]).push([[994],{3769:function(i){i.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"default"}')}}]);
