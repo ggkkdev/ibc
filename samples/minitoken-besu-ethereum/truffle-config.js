@@ -20,7 +20,9 @@
 
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 var mnemonic =
-  "math razor capable expose worth grape metal sunset metal sudden usage scheme";
+  "sword wrap seat wool atom soup release endorse ring ladder carpet define";
+var INFURA_API_KEY="wss://sepolia.infura.io/ws/v3/07b7cb0381184896bd21b62150ae6d7c"
+var INFURA_API_KEY_GOERLI="https://goerli.infura.io/v3/07b7cb0381184896bd21b62150ae6d7c"
 // const infuraKey = "fj4jll3k.....";
 //
 // const fs = require('fs');
@@ -51,12 +53,12 @@ module.exports = {
       provider: () =>
         new HDWalletProvider({
           mnemonic: {
-            phrase: mnemonic,
+            phrase: "math razor capable expose worth grape metal sunset metal sudden usage scheme",
           },
           providerOrUrl: "http://localhost:8645",
           addressIndex: 0,
           numberOfAddresses: 10,
-          pollingInterval: 8000, // Reducing socket hang up error
+          //pollingInterval: 8000, // Reducing socket hang up error
         }),
     },
     ibc1: {
@@ -64,7 +66,59 @@ module.exports = {
       port: 8745, // Standard Ethereum port (default: none)
       network_id: "*", // Any network (default: none)
       provider: () =>
-        new HDWalletProvider(mnemonic, "http://localhost:8745", 0, 10),
+        new HDWalletProvider("math razor capable expose worth grape metal sunset metal sudden usage scheme", "http://localhost:8745", 0, 10),
+    },
+    ibc2: {
+      host: "127.0.0.1", // Localhost (default: none)
+      port: 8651, // Standard Ethereum port (default: none)
+      network_id: "*", // Any network (default: none)
+      provider: () =>
+          new HDWalletProvider(["01cacf73281f1997fa3d3aff363b36fb8de15c56e96bdc924e5ffe969985c7ad"], "http://localhost:8545", 0, 10),
+    },
+    ibc3: {
+      provider: () => new HDWalletProvider(mnemonic, INFURA_API_KEY),
+      network_id: '11155111',
+      //gas: 4465030
+      //confirmations: 10,
+      timeoutBlocks: 200,
+      skipDryRun: true
+    },
+    ibc4: {
+      provider: () => new HDWalletProvider(mnemonic, INFURA_API_KEY_GOERLI),
+      network_id: '5',
+      //gas: 4465030
+      //confirmations: 10,
+      timeoutBlocks: 200,
+      skipDryRun: true
+    },
+    ibc5: {
+      host: "127.0.0.1", // Localhost (default: none)
+      port: 8545, // Standard Ethereum port (default: none)
+      network_id: "*", // Any network (default: none)
+      provider: () =>
+          new HDWalletProvider({
+            mnemonic: {
+              phrase: mnemonic,
+            },
+            providerOrUrl: "http://localhost:8545",
+          }),
+    },
+
+    ibc6: {
+      host: "127.0.0.1", // Localhost (default: none)
+      port: 9545, // Standard Ethereum port (default: none)
+      network_id: "*", // Any network (default: none)
+      networkCheckTimeout: 10000,
+      provider: () =>
+          new HDWalletProvider({
+            mnemonic: {
+              phrase: "scheme leader annual level invest virus transfer echo place marriage genre fresh",
+            },
+            providerOrUrl: "http://localhost:9545",
+            addressIndex: 0,
+            numberOfAddresses: 10,
+            pollingInterval: 8000, // Reducing socket hang up error
+          }),
     },
   },
 

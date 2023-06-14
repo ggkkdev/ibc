@@ -1,0 +1,3 @@
+[submodule "ibc"]
+	path = /Users/guillaumequispe/thesis/code/cosmos/yui-docs/contracts/minitoken/solidity/contracts/ibc
+	url = https://github.com/hyperledger-labs/yui-ibc-solidity.git

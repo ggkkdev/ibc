@@ -1,9 +1,10 @@
 // SPDX-License-Identifier: Apache-2.0
 pragma solidity ^0.8.9;
 
-import "@hyperledger-labs/yui-ibc-solidity/contracts/core/OwnableIBCHandler.sol";
 import "solidity-bytes-utils/contracts/BytesLib.sol";
 import "../lib/Packet.sol";
+import "../ibc/contracts/core/05-port/IIBCModule.sol";
+import "../ibc/contracts/core/25-handler/IBCHandler.sol";
 
 contract MiniToken is IIBCModule {
     IBCHandler ibcHandler;
@@ -255,5 +256,9 @@ contract MiniToken is IIBCModule {
         virtual
     {
         require(_mint(data.sender.toAddress(0), data.amount));
+    }
+
+    function test123() public view returns (string memory) {
+        return "ok2";
     }
 }

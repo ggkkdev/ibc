@@ -1,6 +1,6 @@
 {
   "src": {
-    "chain-id": "ibc0",
+    "chain-id": "ibc00017",
     "client-id": "mock-client-0",
     "connection-id": "connection-0",
     "channel-id": "channel-0",
@@ -8,8 +8,9 @@
     "order": "unordered",
     "version": "transfer-1"
   },
+
   "dst": {
-    "chain-id": "ibc1",
+    "chain-id": "ibc00018",
     "client-id": "mock-client-0",
     "connection-id": "connection-0",
     "channel-id": "channel-0",

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 pragma solidity ^0.8.9;
-import "@hyperledger-labs/yui-ibc-solidity/contracts/proto/ProtoBufRuntime.sol";
-import "@hyperledger-labs/yui-ibc-solidity/contracts/proto/GoogleProtobufAny.sol";
+import "../ibc/contracts/proto/ProtoBufRuntime.sol";
+import "../ibc/contracts/proto/GoogleProtobufAny.sol";
 
 library MiniTokenPacketData {
 

@@ -1,6 +1,6 @@
 .PHONY: build
 build:
-	npm run compile
+	npm run compile --all
 
 .PHONY: install
 install:
@@ -11,5 +11,7 @@ proto:
 ifndef SOLPB_DIR
 	$(error SOLPB_DIR is not specified)
 else
-	. ./scripts/solpb.sh
+	rm -rf ./generated2
+	. ./scripts/solpb2.sh
 endif
+

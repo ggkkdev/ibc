@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 set -eu
-
 SCRIPT_DIR=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
 source ${SCRIPT_DIR}/util/relayer-util
 
 rm -rf ${RELAYER_CONF} &> /dev/null
+
 
 ${RLY} config init
 ${RLY} chains add-dir ${CONF_DIR}/relayer/demo/

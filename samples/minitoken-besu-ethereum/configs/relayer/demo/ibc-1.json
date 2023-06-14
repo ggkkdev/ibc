@@ -1,14 +1,16 @@
 {
   "chain": {
     "@type": "/relayer.chains.ethereum.config.ChainConfig",
-    "chain_id": "ibc1",
-    "eth_chain_id": 2019,
-    "rpc_addr": "http://localhost:8745",
-    "hdw_mnemonic": "math razor capable expose worth grape metal sunset metal sudden usage scheme",
+    "chain_id": "ibc00018",
+    "eth_chain_id": 5,
+    "rpc_addr": "https://goerli.infura.io/v3/07b7cb0381184896bd21b62150ae6d7c",
+    "hdw_mnemonic": "sword wrap seat wool atom soup release endorse ring ladder carpet define",
     "hdw_path": "m/44'/60'/0'/0/0",
-    "ibc_address": "0x702E40245797c5a2108A566b3CE2Bf14Bc6aF841"
+    "ibc_address": "0xB82c532347Ec73af385fC85dB095C1c235E6FF47"
   },
   "prover": {
-    "@type": "/relayer.provers.mock.config.ProverConfig"
+    "@type": "/relayer.provers.ethereum_light_client.config.ProverConfig",
+    "beacon_endpoint":"https://rpc.ankr.com/premium-http/eth_goerli_beacon/7e6f703f48844f4bc65b341311731f82e57bfe98a6cef7d2ea0ffe0d714f9dcc",
+    "network": "goerli"
   }
 }

@@ -33,7 +33,7 @@ network-down:
 .PHONY: migrate
 migrate:
 	npm run migrate:ibc0
-	npm run migrate:ibc1
+	# npm run migrate:ibc4
 
 # relayer
 .PHONY: handshake relayer-start relayer-stop
@@ -69,3 +69,23 @@ e2e:
 .PHONY: sleep
 sleep:
 	sleep 5
+
+# debug
+.PHONY: debug
+debug:
+	npm run compile:ibc2
+	@make build-contract
+	truffle migrate --network ibc0
+
+# debug2
+.PHONY: debug2
+debug2:
+	@make build-contract
+	@make migrate
+	truffle exec test/debug.js --network ibc0 --compile-none --migrate-none
+
+
+# exec
+.PHONY: exec
+exec:
+	truffle exec test/debug2.js --network ibc1 --compile-none --migrate-none
